@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css' >
+    <title>Car Price Prediction</title>
+</head>
+<body>
+    <div class="predict" style="background-image:url('https://images.hdqwalls.com/wallpapers/exotic-cars-4k-vo.jpg');background-size :100% 100%;margin: auto;width:auto">
+        <h1 style="text-align:center;"><b>CAR PRICE PREDICTION</b></h1>
+        <form action = "{{url_for ('predict')}}" method="POST" style="text-align:center;">
+            <label style="font-size:30px;">No.of KM's Driven   </label><br>
+            <input type="number" name="No.of KM's Driven" placeholder="No.of KM'S" required="required" step="any" style= "text-align : center;font-size : 20px;width : 375px"><br>
+            <br>
+            <label style="font-size:30px;text-align:center;">Showroom Price (In lacs)   </label><br>
+            <input type="number" name="Showroom Price" placeholder="Showroom Price " required="required" step="any" style= "text-align : center;font-size : 20px;width : 375px"><br>
+            <br>
+            <label style="font-size:30px;text-align:center;">Type of Fuel</label><br>
+            <select name="Type of Fuel" id="fuel" required="required" style= "text-align : center;font-size : 20px;width : 375px">
+                <option value="Petrol" >Petrol</option>
+                <option value="Diesel" >Diesel</option>
+            </select><br>
+            <br>
+            <label style="font-size:30px;text-align:center;">Type of Seller</label><br>
+            <select name="Type of Seller" id="seller" required="required" style= "text-align : center;font-size : 20px;width : 375px">
+                <option value="Individual" >Individual</option>
+                <option value="Dealer" >Dealer</option>
+            </select><br>
+            <br>
+            <label style="font-size:30px;text-align:center;">Transmission</label><br>
+            <select name="Transmission" id="Transmission" required="required" style= "text-align : center;font-size : 20px;width : 375px">
+                <option value="Manual" >Manual</option>
+                <option value="Automatic" >Automatic</option>
+            </select><br>
+            <br>
+            <label style="font-size:30px;text-align:center;">Is the car second hand?</label><br>
+            <select name="Is_the_car_second_hand" id="Is_the_car_second_hand"  required="required" style= "text-align : center;font-size : 20px;width : 375px">
+                <option value="No"  >No</option>
+                <option value="Yes" >Yes</option>
+            </select><br>
+            <br><br><br>
+
+            <button type="submit" style="font-size:30px;width : 750px ; background-color : white;" >Predict</button>
+            <br><br>
+            <button type= "reset"  style="font-size:30px;width : 750px ; background-color : white" >Reset</button>
+
+
+
+
+
+
+        </form>
+        <br>
+        <br>
+        <br>
+
+        <h1 style="text-align : center"><b>{{ prediction_text }}</b></h1>
+    </div>
+
+
+</body>
+</html>
